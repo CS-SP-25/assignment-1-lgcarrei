@@ -11,9 +11,12 @@ public class State implements SalesTaxBehavior{
     //getters/setters and constructor
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
-    public State(String name, SalesTaxBehavior taxBehavior){
+    public State(String name){
         this.name = name;
-        this.taxBehavior = taxBehavior;
+    }
+
+    public void setTaxBehavior(SalesTaxBehavior taxBehavior){
+        this.taxBehavior= taxBehavior;
     }
 
     // other methods

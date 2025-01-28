@@ -4,6 +4,6 @@ import java.util.Stack;
  */
 public class Alaska extends State {
     public Alaska(){
-        super("Alaska", new NoTax());
+        super("Alaska");
     }
 }

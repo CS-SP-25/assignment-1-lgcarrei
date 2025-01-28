@@ -29,14 +29,20 @@ public class SalesTaxCalculator {
             return;
         }
 
-        // create state object based on input
+        // create state object based on input - set behavior dynamically after state is identified
         State state;
         switch (stateName) {
+            case "Hawaii":
+                state = new Hawaii();
+                state.setTaxBehavior(new FourAndHalfPercent());
+                break;
             case "Indiana":
                 state = new Indiana();
+                state.setTaxBehavior(new SevenPercent());
                 break;
             case "Alaska":
                 state = new Alaska();
+                state.setTaxBehavior(new NoTax());
                 break;
             default:
                 System.out.println("Invalid state. Please choose Indiana or Alaska.");
